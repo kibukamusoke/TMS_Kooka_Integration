@@ -1,0 +1,10 @@
+
+version: '2'
+services:
+  php-apache:
+    container_name: kooka
+    image: kibukamusoke/connect-php-client:latest
+    ports:
+      - "8025:80"
+    volumes:
+      - ./public:/var/www/html
