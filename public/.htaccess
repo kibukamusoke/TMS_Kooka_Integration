@@ -12,7 +12,7 @@ RewriteEngine on
 
 #api routes
 RewriteRule ^update/(.*)$ index.php?tmn_hw_id=$1&type=update
-RewriteRule ^action/(.*)/(.*) index.php?tmn_hw_id=$1&action_id=$2&type=action
+RewriteRule ^action/(.*)$ index.php?action=$1&type=action
 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f

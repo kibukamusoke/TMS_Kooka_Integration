@@ -25,9 +25,10 @@ class TerminalData
         return $result[0];
     }
 
-    public function terminalOfflineAction($tmn_hw_id, $action_id, $data)
+    public function terminalOfflineAction($action, $data)
     {
-        $this->__GB->__DB->query("CALL sp_tmn_offline_action($tmn_hw_id,$action_id,'$data' @output);");
+        $data = json_encode($data);
+        $this->__GB->__DB->query("CALL sp_tmn_offline_action('$data', '$action', @output);");
         $query = $this->__GB->__DB->query('SELECT @output');
         $result = $this->__GB->__DB->fetch_array($query);
         return $result[0];

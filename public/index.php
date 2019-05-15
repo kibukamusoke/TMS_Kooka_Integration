@@ -14,7 +14,7 @@ switch ($_GET['type']) {
         echo($__TMS->updateTerminal($__DB->escape_string($_GET['tmn_hw_id'])));
         break;
     case 'action':
-        echo($__TMS->terminalOfflineAction($__DB->escape_string($_GET['tmn_hw_id']), $__DB->escape_string($_GET['action_id']), $_POST));
+        echo($__TMS->terminalOfflineAction($__DB->escape_string($_GET['action']), $_POST));
         break;
     default:
         //http_response_code(404);
